@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="static/style.css" rel="stylesheet">
+    <link rel="search" href="{{ url_for('.contact') }}">
 </head>
 
 <body>
@@ -13,13 +14,15 @@
         <div class="container">
             <h1>GLOBAL CODE</h1>
             <div class="box">
-                <small>Tech-solution</small>
+                <small>Git-solution</small>
             </div>
         </div>
         <form class="search">
             <div>
                 <label>Search</label>
-                <input type="text" name="Search" placeholder="what's on your mind?">
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+                <!-- <input  type="text" name="Search" placeholder="Looking for someone?"> -->
             </div>
         </form>
     </header>
@@ -27,13 +30,11 @@
         <div class="container">
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
                 <li><a href="#">Services</a></li>
-                <li><a href="#">Contacts</a></li>
+                <li><a href="{{ url_for('.contact') }}">Git Accounts</a></li>
             </ul>
         </div>
     </nav>
-
     <section class="showcase">
         <div class="container">
             <h1>{{to}}</h1>
@@ -41,17 +42,32 @@
     </section>
 
     <section id="main">
+
         <div class="block">
-            <h1>Cape Coast</h1>
-            <p><a href="#">WE</a> Lorem ipsum dolor Lorem ipsum dolor sit amet, consectetur adipisicing</p>
+            <div class="ucc">
+                <h1><a href="https://ucc.edu.gh/">UCC</a></h1>
+                <p>
+                    <h2> Take a look</h2>
+                </p>
+            </div>
         </div>
+
         <div class="block">
-            <h1>KNUST</h1>
-            <p><a href="#">LOVE</a> Lorem ipsum dolor. Lorem ipsum dolor sit amet, consectetur adipisicing </p>
+            <div class="knust">
+                <h1><a href="https://www.knust.edu.gh/">KNUST</a></h1>
+                <p>
+                    <h2>Check out more </h2>
+                </p>
+            </div>
         </div>
+
         <div class="block">
-            <h1>LEGON</h1>
-            <p><a href="#">TECH</a> Lorem ipsum dolor Lorem ipsum dolor sit amet, consectetur adipisicing</p>
+            <div class="legon">
+                <h1><a href="https://www.ug.edu.gh/">LEGON</a></h1>
+                <p>
+                    <h2> Just click</h2>
+                </p>
+            </div>
         </div>
     </section>
     <aside class="sidebar">
@@ -84,4 +100,5 @@
         </div>
     </footer>
 </body>
+
 </html>

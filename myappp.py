@@ -7,6 +7,10 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/contacts')
+def contact():
+    return render_template('contacts.html')
+
 @app.route('/foo/<name>')
 def foo(name):
     return render_template('index.html', to=name)

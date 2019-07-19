@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+    <style>
+        .mySlides {
+            display: none;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        #myInput {
+            background-image: url('/css/searchicon.png');
+            background-position: 10px 12px;
+            background-repeat: no-repeat;
+            width: 100%;
+            font-size: 16px;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+        }
+        
+        #myUL {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        #myUL li a {
+            border: 1px solid #ddd;
+            margin-top: -1px;
+            /* Prevent double borders */
+            background-color: #f6f6f6;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+            display: block
+        }
+        
+        #box {
+            border: 2px solid rgb(13, 11, 182);
+            border-radius: 5px;
+            margin-left: 150px;
+            margin-right: 150px;
+        }
+        
+        #myUL li a:hover:not(.header) {
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w3-container">
+        <h2>Unversities</h2>
+        <p>Find family and friends from these universities</p>
+    </div>
+
+    <div class="w3-content w3-section" style="max-width:500px">
+        <img class="mySlides w3-animate-top" src="/static/images/ucc.png" style="width:100%">
+        <img class="mySlides w3-animate-bottom" src="/static/images/knust.png" style="width:100%">
+        <img class="mySlides w3-animate-top" src="/static/images/legon.png" style="width:100%">
+        <img class="mySlides w3-animate-bottom" src="/static/images/ucc.png" style="width:100%">
+    </div>
+
+    <script>
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) {
+                myIndex = 1
+            }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 2500);
+        }
+    </script>
+    <div id="box">
+        <h2>GIT ACCOUNTS</h2>
+
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+        <ul id="myUL">
+            <li><a href="https://github.com/Enochsem">Enoch sem</a></li>
+            <li><a href="https://github.com/larteyjoshua">joshua</a></li>
+
+            <li><a href="https://github.com/VicGanoh">VicGanoh</a></li>
+            <li><a href="https://github.com/PhilemonCleland">Philemon Cleland</a></li>
+
+            <li><a href="#">Calvin</a></li>
+            <li><a href="#">Christina</a></li>
+            <li><a href="#">Cindy</a></li>
+        </ul>
+
+    </div>
+
+
+    <script>
+        function myFunction() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
